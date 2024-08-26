@@ -1,0 +1,11 @@
+Gem::Specification.new do |s|
+  s.name        = "autogen_git_commit"
+  s.version     = "0.1.0"
+  s.summary     = "Auto-generate Git commit messages with LLM"
+  s.description = "This gem simplifies the commit process by automatically generating descriptive commit messages based on the files that have been added to the Git staging area. It leverages LLM to analyze the changes and create meaningful commit messages, helping you maintain a clean and organized commit history."
+  s.authors     = ["Adrian Goh"]
+  s.email       = "hello@adriangohjw.com"
+  s.files       = ["lib/autogen_git_commit.rb"]
+  s.homepage    = "https://rubygems.org/gems/autogen_git_commit"
+  s.license     = "MIT"
+end
