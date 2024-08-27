@@ -2,9 +2,9 @@ require 'net/http'
 require 'json'
 require 'uri'
 
-module AutogenGitCommit
+module Autogitc
   def self.openai_api_key
-    ENV['OPENAI_API_KEY']
+    ENV['AUTOGITC_KEY']
   end
 
   def self.get_staged_files
@@ -51,7 +51,7 @@ module AutogenGitCommit
 
   def self.main
     if openai_api_key.nil?
-      puts 'No OPENAI_API_KEY key found in environment variables.'
+      puts 'No AUTOGITC_KEY key found in environment variables.'
       return
     end
 

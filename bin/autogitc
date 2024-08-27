@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'autogen_git_commit'
+require 'autogitc'
 
 # Your code here to handle the command line execution
-AutogenGitCommit.main
+Autogitc.main
