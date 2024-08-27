@@ -32,7 +32,7 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 2. Trigger the autogitc process using:
 
    ```
-   $ bundle exec rake autogitc
+   $ bundle exec autogitc
    ```
 
    This will analyze your changes and generate an AI-powered commit message. It will be committed with the generated message.
