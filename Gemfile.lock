@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    autogitc (0.1.2)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     parallel (1.26.3)
@@ -10,7 +11,6 @@ GEM
       racc
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.2.1)
     regexp_parser (2.9.2)
     rexml (3.3.6)
       strscan
@@ -36,7 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rake
+  autogitc
   rubocop
 
 BUNDLED WITH

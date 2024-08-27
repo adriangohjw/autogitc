@@ -7,7 +7,7 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 ## More About This Tool
 
 - This gem uses OpenAI's GPT-4o Mini model, which is cost-effective but requires an internet connection and an API key. Currently, the model is hardcoded.
-- It has minimal dependencies, making it easy to install and integrate into projects without conflicts.
+- It has no dependencies, making it easy to install and integrate into projects without conflicts.
 
 ## Installation
 

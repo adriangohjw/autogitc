@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require 'rake'
-load 'Rakefile'
+require 'bundler/setup'
+require_relative '../lib/autogitc'
 
-Rake::Task['autogitc:run'].invoke
+puts 'Running autogitc...'
+Autogitc.main
