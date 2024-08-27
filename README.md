@@ -14,7 +14,9 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 1. Add the following line to your Gemfile under the development group to prevent loading the gem by default:
 
    ```ruby
-   gem 'autogitc', require: false
+   group :development do
+      gem 'autogitc'
+   end
    ```
 
 2. Run `bundle install`
