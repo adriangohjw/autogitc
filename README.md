@@ -2,6 +2,8 @@
 
 This is a Ruby gem that automates the process of generating Git commit messages using AI.
 
+<i><b>Fun Fact</b>: Every commit in this project (except the very first one) was generated using the AI-powered commit message generator in this code!</i>
+
 ## Installation
 
 Install it yourself as:
