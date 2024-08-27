@@ -39,6 +39,9 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 
    This will analyze your changes and generate an AI-powered commit message. It will be committed with the generated message.
 
+## More Options
+
+- Use `--nc` (or `--nocommit`) to get the generated commit message without making a commit.
 
 ## Contributing
 

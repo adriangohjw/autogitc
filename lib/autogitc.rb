@@ -49,7 +49,7 @@ module Autogitc
     JSON.parse(output_text)['commit_message']
   end
 
-  def self.main
+  def self.main(no_commit: false)
     if openai_api_key.nil?
       puts 'No AUTOGITC_KEY key found in environment variables.'
       return
@@ -68,8 +68,9 @@ module Autogitc
     end.join("\n")
 
     commit_message = generate_commit_message(changes_summary)
-    puts "Generated commit message:\n#{commit_message}"
+    puts 'Generated commit message:'
+    puts commit_message
 
-    `git commit -m "#{commit_message}"`
+    `git commit -m "#{commit_message}"` unless no_commit
   end
 end
