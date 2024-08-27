@@ -11,31 +11,25 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 
 ## Installation
 
-Install it yourself as:
-
-```
-$ gem install autogitc
-```
-
-## Usage
-
-To use autogitc in your project, follow these steps:
-
 1. Add the following line to your Gemfile under the development group to prevent loading the gem by default:
 
    ```ruby
    gem 'autogitc', require: false
    ```
 
-2. Ensure that your OpenAI API key is set in the environment variable `AUTOGITC_KEY`.
+2. Run `bundle install`
 
-3. After installation, add some files to your Git repository:
+3. Ensure that your OpenAI API key is set in the environment variable `AUTOGITC_KEY`.
+
+## Usage
+
+1. Add some files to your Git repository:
 
    ```
    $ git add .
    ```
 
-4. Trigger the autogitc process using:
+2. Trigger the autogitc process using:
 
    ```
    $ bundle exec rake autogitc
