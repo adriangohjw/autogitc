@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'autogitc'
+require 'rake'
+load 'Rakefile'
 
-# Your code here to handle the command line execution
-Autogitc.main
+Rake::Task['autogitc:run'].invoke

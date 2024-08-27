@@ -21,16 +21,24 @@ $ gem install autogen_git_commit
 
 To use autogen_git_commit in your project, follow these steps:
 
-1. After installation, add some files to your Git repository:
+1. Add the following line to your Gemfile under the development group to prevent loading the gem by default:
+
+   ```ruby
+   gem 'autogen_git_commit', require: false
+   ```
+
+2. Ensure that your OpenAI API key is set in the environment variable `AUTOGITC_KEY`.
+
+3. After installation, add some files to your Git repository:
 
    ```
    $ git add .
    ```
 
-2. Run the autogen_git_commit command:
+4. Trigger the autogen_git_commit process using:
 
    ```
-   $ ruby autogen_git_commit
+   $ bundle exec rake autogitc
    ```
 
    This will analyze your changes and generate an AI-powered commit message. It will be committed with the generated message.
