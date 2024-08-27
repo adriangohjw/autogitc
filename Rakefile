@@ -1,6 +1,6 @@
 # Start of Selection
 
-require 'autogitc'
+require_relative 'lib/autogitc'
 
 namespace :autogitc do
   desc 'Trigger autogitc'
@@ -8,10 +8,7 @@ namespace :autogitc do
     puts 'Running autogitc...'
     Autogitc.main
   end
-
-  desc 'Trigger autogitc via bundle exec'
-  task :trigger do
-    Rake::Task['autogitc:run'].invoke
-  end
 end
-# End of Selection
+
+task autogitc: 'autogitc:run'
+task default: 'autogitc:run'
