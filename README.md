@@ -4,6 +4,11 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 
 <i><b>Fun Fact</b>: Every commit in this project (except the very first one) was generated using the AI-powered commit message generator in this code!</i>
 
+## More About This Tool
+
+- This gem uses OpenAI's GPT-4o Mini model, which is cost-effective but requires an internet connection and an API key. Currently, the model is hardcoded.
+- It has no dependencies, making it easy to install and integrate into projects without conflicts.
+
 ## Installation
 
 Install it yourself as:
@@ -38,4 +43,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/adrian
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-```
