@@ -1,0 +1,16 @@
+{
+  /*
+   * To retrieve an Extension ID, follow the steps below:
+   * 1) Open "Extensions: Marketplace" in the left tab (Ctrl + Shift + X)
+   * 2) Look for the extension plugin
+   * 3) Press the "Gear" setting icon
+   * 4) Select "Copy Extension ID"
+   * 5) Put the ID into the array below
+   *
+   * To download extension plugins, follow the steps below:
+   * 1) Open `Extensions: Marketplace` in the left tab inside VS Code or (Ctrl + Shift + X)
+   * 2) Type in `@recommended` in the search field
+   * 3) Download all the extension plugins required
+   */
+  "recommendations": ["esbenp.prettier-vscode", "rubocop.vscode-rubocop"]
+}
