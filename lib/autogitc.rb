@@ -15,7 +15,7 @@ module Autogitc
     `git diff --staged #{file_path}`
   end
 
-  def self.generate_commit_message(changes_summary)
+  def self.generate_commit_message(changes_summary:, must_have_text: nil)
     uri = URI('https://api.openai.com/v1/chat/completions')
 
     http = Net::HTTP.new(uri.host, uri.port)
@@ -37,7 +37,7 @@ module Autogitc
         },
         {
           role: 'user',
-          content: "Generate a conventional git commit message limited to 72 characters for the following changes in a JSON format with a key 'commit_message':\n\n#{changes_summary}"
+          content: "Generate a conventional git commit message limited to 72 characters for the following changes in a JSON format with a key 'commit_message', ensuring it includes the text: '#{must_have_text}':\n\n#{changes_summary}"
         }
       ],
       response_format: { "type": 'json_object' }
@@ -49,7 +49,7 @@ module Autogitc
     JSON.parse(output_text)['commit_message']
   end
 
-  def self.main(no_commit: false)
+  def self.main(no_commit: false, must_have_text: nil)
     if openai_api_key.nil?
       puts 'No AUTOGITC_KEY key found in environment variables.'
       return
@@ -67,7 +67,10 @@ module Autogitc
       "Changes in #{file}:\n#{diff}\n"
     end.join("\n")
 
-    commit_message = generate_commit_message(changes_summary)
+    commit_message = generate_commit_message(
+      changes_summary: changes_summary,
+      must_have_text: must_have_text
+    )
     puts 'Generated commit message:'
     puts commit_message
 

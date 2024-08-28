@@ -42,6 +42,7 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 ## More Options
 
 - Use `--nc` (or `--nocommit`) to get the generated commit message without making a commit.
+- Use `--text=XXX` to specify a required text that should be included in the generated commit message. Replace `XXX` with your desired text.
 
 ## Contributing
 

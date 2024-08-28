@@ -3,6 +3,7 @@ require 'bundler/setup'
 require_relative '../lib/autogitc'
 
 no_commit = ARGV.include?('--nocommit') || ARGV.include?('--nc')
+must_have_text = ARGV.find { |arg| arg.start_with?('--text=') }&.split('=')&.last
 
 puts 'Running autogitc...'
-Autogitc.main(no_commit: no_commit)
+Autogitc.main(no_commit: no_commit, must_have_text: must_have_text)
