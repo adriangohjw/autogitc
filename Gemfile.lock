@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    autogitc (0.1.4)
+    autogitc (0.2.0)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     parallel (1.26.3)
