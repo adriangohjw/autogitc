@@ -3,7 +3,7 @@ require 'json'
 require 'uri'
 
 module OpenAIWrapper
-  def self.call_api(messages:)
+  def self.call_api(messages:, is_json_output: true)
     uri = URI('https://api.openai.com/v1/chat/completions')
 
     http = Net::HTTP.new(uri.host, uri.port)
@@ -16,11 +16,9 @@ module OpenAIWrapper
       }
     )
 
-    request.body = {
-      model: 'gpt-4o-mini',
-      messages: messages,
-      response_format: { "type": 'json_object' }
-    }.to_json
+    body = { model: 'gpt-4o-mini', messages: messages }
+    body.merge!(response_format: { "type": 'json_object' }) if is_json_output
+    request.body = body.to_json
 
     response = http.request(request)
     result = JSON.parse(response.body)
