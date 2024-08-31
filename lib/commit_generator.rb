@@ -1,7 +1,7 @@
 require 'json'
 require_relative 'openai_wrapper'
 
-module Autogitc
+module CommitGenerator
   def self.openai_api_key
     ENV['AUTOGITC_KEY']
   end
