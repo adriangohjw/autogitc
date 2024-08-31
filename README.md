@@ -25,6 +25,8 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 
 ## Usage
 
+### Generate git commit messages
+
 1. Add some files to your Git repository:
 
    ```
@@ -39,10 +41,24 @@ This is a Ruby gem that automates the process of generating Git commit messages 
 
    This will analyze your changes and generate an AI-powered commit message. It will be committed with the generated message.
 
-## More Options
+#### More Options
 
 - Use `--nc` (or `--nocommit`) to get the generated commit message without making a commit.
 - Use `--text=XXX` to specify a required text that should be included in the generated commit message. Replace `XXX` with your desired text.
+
+### Generate PR from template (Experimental)
+
+The PR template generator will create a template for your pull request.
+
+```
+$ bundle exec autogitc pr
+```
+
+- Specify the base branch using `--base=BRANCH_NAME` (default is `main` if not specified).
+- The generator will search for the template file in the following locations (in order):
+  - `/project/pull_request_template.md`
+  - `/project/docs/pull_request_template.md`
+  - `/project/.github/pull_request_template.md`
 
 ## Contributing
 

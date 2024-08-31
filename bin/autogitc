@@ -1,9 +1,19 @@
 #!/usr/bin/env ruby
 require 'bundler/setup'
 require_relative '../lib/commit_generator'
+require_relative '../lib/pr_template_generator'
 
-no_commit = ARGV.include?('--nocommit') || ARGV.include?('--nc')
-must_have_text = ARGV.find { |arg| arg.start_with?('--text=') }&.split('=')&.last
+if ARGV.include?('pr')
+  base_branch_arg = ARGV.find { |arg| arg.start_with?('--base=') }
+  base_branch = base_branch_arg ? base_branch_arg.split('=').last : 'main'
+  puts "Base branch not specified, defaulting to 'main'." if base_branch_arg.nil?
 
-puts 'Running autogitc...'
-CommitGenerator.main(no_commit: no_commit, must_have_text: must_have_text)
+  puts 'Running PR template generator...'
+  PrTemplateGenerator.main(base_branch: base_branch)
+else
+  no_commit = ARGV.include?('--nocommit') || ARGV.include?('--nc')
+  must_have_text = ARGV.find { |arg| arg.start_with?('--text=') }&.split('=')&.last
+
+  puts 'Running autogitc...'
+  CommitGenerator.main(no_commit: no_commit, must_have_text: must_have_text)
+end
