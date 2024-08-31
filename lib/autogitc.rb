@@ -1,6 +1,4 @@
-require 'net/http'
 require 'json'
-require 'uri'
 require_relative 'openai_wrapper'
 
 module Autogitc
