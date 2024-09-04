@@ -3,6 +3,21 @@ require 'bundler/setup'
 require_relative '../lib/commit_generator'
 require_relative '../lib/pr_template_generator'
 
+if ARGV.include?('--help')
+  puts <<~HELP
+    Usage: autogitc [options]
+
+    Options:
+      pr                  Generate a pull request template
+      --base=<branch>     Specify the base branch (default: main)
+      --nocommit, --nc    Run without committing changes
+      --text=<text>       Specify text that must be included in the commit
+      --help              Display this help message
+      --version            Show the version of autogitc
+  HELP
+  exit
+end
+
 if ARGV.include?('--version')
   gemspec = Gem::Specification.load('autogitc.gemspec')
   puts "autogitc version #{gemspec.version}"
