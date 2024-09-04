@@ -6,12 +6,14 @@ require_relative '../lib/pr_template_generator'
 if ARGV.include?('--help')
   puts <<~HELP
     Usage: autogitc [options]
-
-    Options:
-      pr                  Generate a pull request template
-      --base=<branch>     Specify the base branch (default: main)
       --nocommit, --nc    Run without committing changes
       --text=<text>       Specify text that must be included in the commit
+
+    Usage autogitc pr [options]
+    This generates a pull request from existing template
+      --base=<branch>     Specify the base branch (default: main)
+
+    Other options:
       --help              Display this help message
       --version            Show the version of autogitc
   HELP
